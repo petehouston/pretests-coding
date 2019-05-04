@@ -11,6 +11,7 @@ public class SetEqual {
         test(new int[] {1, 9, 12}, new int[] {9, 1, 12, 1}, 1);
         test(new int[] {1, 7, 8}, new int[] {1, 7, 1}, 0);
         test(new int[] {1, 7, 8}, new int[] {1, 7, 6}, 0);
+        test(new int[] {1, 1}, new int[] {1, 2}, 0);
 
     }
 
@@ -22,6 +23,16 @@ public class SetEqual {
         for (int x: a) {
             boolean found = false;
             for (int y: b) {
+                if (y == x) {
+                    found = true; break;
+                }
+            }
+            if (!found) return 0;
+        }
+
+        for (int x: b) {
+            boolean found = false;
+            for (int y: a) {
                 if (y == x) {
                     found = true; break;
                 }
