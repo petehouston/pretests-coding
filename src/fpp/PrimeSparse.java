@@ -13,7 +13,10 @@ public class PrimeSparse {
     public static void main(String[] args) {
         test(new int[] {6, 11, 13, 28, 5, 6}, 0);
         test(new int[] {6, 11, 88, 13, 28, 5, 6, 17}, 1);
-
+        test(new int[] {17}, 1);
+        test(new int[] {6, 17, 15}, 1);
+        test(new int[] {7, 25, 7, 4, 7}, 1);
+        test(new int[] {}, 1);
     }
 
     static int isPrimeSparse(int[] a) {
